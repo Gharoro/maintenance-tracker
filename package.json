@@ -1,0 +1,33 @@
+{
+  "name": "maintenance-tracker",
+  "version": "1.0.0",
+  "description": "Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of their request.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon --exec babel-node index.js",
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gharoro/maintenance-tracker.git"
+  },
+  "author": "Pureheart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gharoro/maintenance-tracker/issues"
+  },
+  "homepage": "https://github.com/Gharoro/maintenance-tracker#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
