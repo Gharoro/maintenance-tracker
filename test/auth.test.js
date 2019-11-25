@@ -1,10 +1,23 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import { Client } from 'pg';
+import { config } from 'dotenv';
 import app from '../index';
 import { login_info, user_info } from './dummies';
 
+config();
+
+const client = new Client({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT
+});
+
 const { expect } = chai;
 chai.use(chaiHttp);
+
 
 describe('AUTH ROUTES', () => {
   it('POST /signup - Creates a new user', (done) => {
@@ -14,7 +27,7 @@ describe('AUTH ROUTES', () => {
       .send(user_info)
       .end((err, res) => {
         expect(res).to.have.status(201);
-        expect(res.body.message).to.equals('Account created successfuly');
+        expect(res.body.success).to.equals('Account created successfuly');
         done(err);
       });
   });

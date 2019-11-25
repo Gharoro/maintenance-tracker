@@ -5,7 +5,9 @@
     "node": true,
     "mocha": true
   },
-  "extends": ["airbnb-base"],
+  "extends": [
+    "airbnb-base"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -18,6 +20,11 @@
     "no-console": 0,
     "eol-last": 0,
     "camelcase": 0,
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "consistent-return": "off",
+    "object-curly-newline": "off",
+    "arrow-body-style": "off",
+    "no-else-return": "off",
+    "no-shadow": "off"
   }
 }

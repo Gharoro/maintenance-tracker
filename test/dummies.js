@@ -4,12 +4,12 @@ const login_info = {
 };
 
 const user_info = {
-  first_name: 'John',
-  last_name: 'Doe',
-  username: 'JDoe',
-  email: 'johndoe@test.com',
-  password: '123456789',
-  role: 'admin'
+  first_name: 'David',
+  last_name: 'Miller',
+  username: 'DMiller',
+  email: 'davemiller@email.com',
+  password: '1234567',
+  role: 'customer'
 };
 
 const request_info = {

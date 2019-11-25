@@ -1,9 +1,25 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import passport from 'passport';
+import passportConfig from './config/passport';
 import auth from './routes/api/v1/auth';
 import users from './routes/api/v1/users';
 import requests from './routes/api/v1/requests';
+import './config/dbconnection';
 
 const app = express();
+
+// Cors middleware
+app.use(cors());
+
+// Body-parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Passport middleware
+app.use(passport.initialize());
+passportConfig(passport);
 
 // Home Route
 app.get('/', (req, res) => {
@@ -18,7 +34,7 @@ app.use('/api/v1/auth', auth);
 app.use('/api/v1/users', users);
 app.use('/api/v1/requests', requests);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4400;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}...`);
