@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import passport from 'passport';
 import {
   all_requests,
   approve_request,
@@ -9,10 +10,10 @@ import {
 const router = Router();
 
 // @desc fetch all requests
-router.get('/', all_requests);
+router.get('/', passport.authenticate('jwt', { session: false }), all_requests);
 
 // @desc approve request
-router.put('/:requestId/approve', approve_request);
+router.put('/:requestId/approve', passport.authenticate('jwt', { session: false }), approve_request);
 
 // @desc disapprove request
 router.put('/:requestId/disapprove', disapprove_request);

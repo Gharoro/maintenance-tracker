@@ -12,6 +12,12 @@ const user_signup = (req, res) => {
       error: 'Please fill all fields.'
     });
   }
+  if (role !== 'admin' && role !== 'customer') {
+    return res.status(400).json({
+      status: 400,
+      error: 'User role must either be an "admin" or a "customer"'
+    });
+  }
   if (password.length < 6) {
     return res.status(400).json({
       status: 400,
@@ -80,7 +86,7 @@ const user_login = (req, res) => {
         });
       }
       const user_password = user.rows[0].password;
-      const user_id = user.rows[0].password;
+      const user_id = user.rows[0].id;
       const user_first_name = user.rows[0].first_name;
       const user_last_name = user.rows[0].last_name;
       const user_avatar = user.rows[0].gravatar;
@@ -109,8 +115,4 @@ const user_login = (req, res) => {
     });
 };
 
-const user_logout = (req, res) => {
-  return 'User logged out';
-};
-
-export { user_signup, user_login, user_logout };
+export { user_signup, user_login };

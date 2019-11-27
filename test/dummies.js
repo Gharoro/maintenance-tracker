@@ -1,15 +1,15 @@
-const login_info = {
-  email: 'testemail@test.com',
-  password: '123456789'
-};
+const date = new Date();
 
 const user_info = {
-  first_name: 'David',
-  last_name: 'Miller',
-  username: 'DMiller',
-  email: 'davemiller@email.com',
+  first_name: 'Jane',
+  last_name: 'Smith',
+  username: 'JSmith',
+  email: 'janesmith@email.com',
   password: '1234567',
-  role: 'customer'
+  role: 'customer',
+  gravatar: 'myprofilepic',
+  created_at: date,
+  modified_at: date
 };
 
 const request_info = {
@@ -18,4 +18,4 @@ const request_info = {
   category: 'repair'
 };
 
-export { login_info, user_info, request_info };
+export { user_info, request_info };
